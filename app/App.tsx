@@ -2,12 +2,14 @@
 import React from 'react';
 import {
   SafeAreaView,
+  Text,
   useColorScheme,
 } from 'react-native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
+import { getFontFamily } from './helpers/FontsHelper';
 
 
 function App(): React.JSX.Element {
@@ -18,7 +20,11 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle} />
+    <SafeAreaView style={backgroundStyle} >
+      <Text
+        style={{ fontFamily: getFontFamily('Inter', '600') }}
+      >Hello</Text>
+    </SafeAreaView>
   );
 }
 
