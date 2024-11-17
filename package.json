@@ -9,6 +9,16 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off"
+    }
+  },
   "dependencies": {
     "@react-navigation/native": "^7.0.0",
     "@react-navigation/stack": "^7.0.2",
