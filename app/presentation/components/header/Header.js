@@ -2,11 +2,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 import style from './style';
+import PropTypes from 'prop-types';
 
 const Header = props => {
 
     return (<View>
-        <Text>
+        <Text style={style.title1}>
             {props.title}
         </Text>
     </View>);
