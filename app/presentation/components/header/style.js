@@ -5,11 +5,23 @@ import { getFontFamily } from '../../../helpers/FontsHelper';
 import { scaleFontSize } from '../../../helpers/Scaling';
 
 const style: StyleSheet = StyleSheet.create({
-
     title1: {
         fontFamily: 'Inter',
         fontSize: scaleFontSize(24),
         lineHeight: scaleFontSize(29),
+        fontWeight: '600',
+    },
+    title2: {
+        fontFamily: 'Inter',
+        fontSize: scaleFontSize(18),
+        lineHeight: scaleFontSize(22),
+        fontWeight: '600',
+    },
+    title3: {
+        fontFamily: 'Inter',
+        fontSize: scaleFontSize(16),
+        lineHeight: scaleFontSize(19),
+        fontWeight: '600',
     },
 });
 
