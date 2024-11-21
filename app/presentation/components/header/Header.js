@@ -19,11 +19,13 @@ const Header = props => {
         }
     };
 
-    return (<View>
-        <Text style={getStyleByType()}>
-            {props.title}
-        </Text>
-    </View>);
+    return (
+        <View>
+            <Text style={getStyleByType()}>
+                {props.title}
+            </Text>
+        </View>
+    );
 };
 
 Header.default = {
