@@ -10,7 +10,7 @@ const HomePage = () => {
 
     return (
         <SafeAreaView style={[globalStyle.background, globalStyle.flex]}>
-            <Header />
+            <Header title={'Guest'} type={1} />
         </SafeAreaView>
     );
 };
