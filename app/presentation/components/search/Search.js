@@ -38,7 +38,6 @@ const Search = props => {
 };
 
 Search.propTypes = {
-    title: PropTypes.string.isRequired,
     onTextChanged: PropTypes.func,
 };
 
