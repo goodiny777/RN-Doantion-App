@@ -8,7 +8,7 @@ const Button = props => {
 
     return (
         <Pressable disabled={props.isDisabled} style={[style.button, props.isDisabled && style.buttonDisabled]} onPress={() => props.onPress()}>
-            <Text>
+            <Text style={style.title}>
                 {props.title}
             </Text>
         </Pressable >
