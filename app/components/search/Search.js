@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 
 import style from './style';
 import PropTypes from 'prop-types';
-import { horizontalScale, scaleFontSize } from '../../../helpers/Scaling';
+import { horizontalScale, scaleFontSize } from '../../helpers/Scaling';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { TextInput } from 'react-native-gesture-handler';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';

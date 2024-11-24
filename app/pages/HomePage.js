@@ -3,7 +3,7 @@ import {
     SafeAreaView,
 } from 'react-native';
 
-import { globalStyle } from '../../assets/style/GlobalStyle';
+import { globalStyle } from '../assets/style/GlobalStyle';
 import Header from '../components/header/Header';
 
 const HomePage = () => {

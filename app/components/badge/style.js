@@ -1,8 +1,8 @@
 
 import { StyleSheet } from 'react-native';
 
-import { getFontFamily } from '../../../helpers/FontsHelper';
-import { horizontalScale, scaleFontSize, verticalScale } from '../../../helpers/Scaling';
+import { getFontFamily } from '../../helpers/FontsHelper';
+import { horizontalScale, scaleFontSize, verticalScale } from '../../helpers/Scaling';
 
 const style: StyleSheet = StyleSheet.create({
     badge: {
