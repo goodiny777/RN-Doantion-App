@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 
 import style from './style';
 import PropTypes from 'prop-types';
-import { horizontalScale } from '../../../helpers/Scaling';
+import { horizontalScale } from '../../helpers/Scaling';
 
 const Tab = props => {
     const [width, setWidth] = useState(0);

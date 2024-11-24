@@ -1,8 +1,8 @@
 
 import { StyleSheet } from 'react-native';
 
-import { getFontFamily } from '../../../helpers/FontsHelper';
-import { scaleFontSize } from '../../../helpers/Scaling';
+import { getFontFamily } from '../../helpers/FontsHelper';
+import { scaleFontSize } from '../../helpers/Scaling';
 
 const style: StyleSheet = StyleSheet.create({
     title1: {
