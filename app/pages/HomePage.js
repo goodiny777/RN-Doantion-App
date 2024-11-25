@@ -5,6 +5,7 @@ import {
 
 import { globalStyle } from '../assets/style/GlobalStyle';
 import Header from '../components/header/Header';
+import SingleDonationItem from '../components/singleDonationItem/SingleDonationItem';
 
 const HomePage = () => {
 
