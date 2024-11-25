@@ -4,6 +4,7 @@ import MainNavigator from './navigation/MainNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { View } from 'react-native';
 
 
 const App = () => {
