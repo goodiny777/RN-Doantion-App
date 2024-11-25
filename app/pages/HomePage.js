@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-    SafeAreaView,
-} from 'react-native';
+import { SafeAreaView } from 'react-native';
 
-import { globalStyle } from '../assets/style/GlobalStyle';
+import globalStyle from '../assets/style/GlobalStyle';
 import Header from '../components/header/Header';
 import SingleDonationItem from '../components/singleDonationItem/SingleDonationItem';
 
