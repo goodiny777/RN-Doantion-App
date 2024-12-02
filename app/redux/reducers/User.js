@@ -4,6 +4,7 @@ const initialUserState = {
     firstName: '',
     lastName: '',
     userId: -1,
+    profileImage: 'https://avatar.iran.liara.run/public/boy?username=Ash',
 };
 
 
