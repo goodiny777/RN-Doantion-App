@@ -28,6 +28,7 @@ const Search = props => {
                 size={scaleFontSize(22)}
             />
             <TextInput
+                placeholder={props.placeholder}
                 ref={textInputRef}
                 style={style.searchInput}
                 value={search}
@@ -37,8 +38,14 @@ const Search = props => {
     );
 };
 
+Search.defaultProps = {
+    onTextChanged: () => { },
+    placeholder: 'Search',
+};
+
 Search.propTypes = {
     onTextChanged: PropTypes.func,
+    placeholder: Props.string
 };
 
 export default Search;
