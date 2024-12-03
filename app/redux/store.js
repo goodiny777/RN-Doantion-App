@@ -3,10 +3,12 @@ import User from './reducers/User';
 import { logger } from "redux-logger";
 import persistReducer from 'redux-persist/es/persistReducer';
 import persistStore from 'redux-persist/es/persistStore';
+import Categories from './reducers/Categories';
 
 
 const rootReducer = combineReducers({
     user: User,
+    categories: Categories,
 });
 const config = {
     key: 'root',
