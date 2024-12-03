@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { SafeAreaView, ScrollView, Text, View, Image, Pressable, FlatList } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/header/Header';
-
-
-const donations = useSelector(state => state.donations);
+import { updateSelectedCategoryId } from '../../redux/reducers/Categories';
 
 import globalStyle from '../../assets/style/GlobalStyle';
 import style from './style';
-import Search from '../../components/Search';
-import Tab from '../../components/Tab';
-import { updateSelectedCategoryId } from '../../redux/reducers/Categories';
+import Search from '../../components/search/Search';
+import Tab from '../../components/tab/Tab';
+import SingleDonationItem from '../../components/singleDonationItem/SingleDonationItem';
+
 
 
 const [donationItems, setDonationItems] = useState([]);
@@ -49,6 +48,7 @@ const HomePage = () => {
     const user = useSelector(state => state.user);
     const categories = useSelector(state => state.categories);
     const donations = useSelector(state => state.donations);
+
 
     const dispatch = useDispatch();
 
@@ -122,6 +122,27 @@ const HomePage = () => {
                         )}
                     />
                 </View>
+
+                {donationItems.length > 0 && (
+                    <View style={style.donationItemsContainer}>
+                        {donationItems.map(value => (
+                            <View key={value.donationItemId} style={style.singleDonationItem}>
+                                <SingleDonationItem
+                                    onPress={selectedDonationId => { }}
+                                    donationItemId={value.donationItemId}
+                                    uri={value.image}
+                                    donationTitle={value.name}
+                                    badgeTitle={
+                                        categories.categories.filter(
+                                            val => val.categoryId === categories.selectedCategoryId,
+                                        )[0].name
+                                    }
+                                    price={parseFloat(value.price)}
+                                />
+                            </View>
+                        ))}
+                    </View>
+                )}
 
             </ScrollView>
 
