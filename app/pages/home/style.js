@@ -35,7 +35,18 @@ const style: StyleSheet = StyleSheet.create({
     },
     pressableBanner: {
         marginHorizontal: horizontalScale(24),
-    }
+    },
+    categoryHeader: {
+        marginHorizontal: horizontalScale(24),
+        marginBottom: verticalScale(16),
+        marginTop: verticalScale(6),
+    },
+    categories: {
+        marginLeft: horizontalScale(24),
+    },
+    categoryItem: {
+        marginRight: horizontalScale(10),
+    },
 });
 
 export default style;

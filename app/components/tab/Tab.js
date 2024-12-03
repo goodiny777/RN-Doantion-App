@@ -1,5 +1,5 @@
 import { React, useRef, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View, } from 'react-native';
 
 import style from './style';
 import PropTypes from 'prop-types';
@@ -13,7 +13,10 @@ const Tab = props => {
         width: horizontalScale(paddingHorizontal * 2 + width),
     };
     return (
-        <Pressable disabled={props.isDisabled} style={[style.tab, props.inactive && style.inactiveTab, tabWidth]} onPress={() => props.onPress()}>
+        <Pressable
+            style={[style.tab, props.inactive && style.inactiveTab, tabWidth]}
+            onPress={() => props.onPress(props.tabId)}
+        >
             <Text
                 ref={textRef}
                 onTextLayout={event => {
@@ -31,6 +34,7 @@ Tab.default = {
     inactive: false,
 };
 Tab.propTypes = {
+    tabId: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     inactive: PropTypes.bool,
     onPress: PropTypes.func,

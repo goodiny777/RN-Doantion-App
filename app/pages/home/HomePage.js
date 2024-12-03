@@ -1,72 +1,20 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, Text, View, Image, Pressable } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View, Image, Pressable, FlatList } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/header/Header';
 
 
 import globalStyle from '../../assets/style/GlobalStyle';
 import style from './style';
-import Search from '../../components/search/Search';
+import Search from '../../components/Search';
+import Tab from '../../components/Tab';
+import { updateSelectedCategoryId } from '../../redux/reducers/Categories';
 
 const HomePage = () => {
 
     const user = useSelector(state => state.user);
+    const categories = useSelector(state => state.categories);
     const dispatch = useDispatch();
-
-    const categories = [
-        {
-            categoryId: 1,
-            name: 'Highlight',
-        },
-        {
-            categoryId: 2,
-            name: 'Environment',
-        },
-        {
-            categoryId: 3,
-            name: 'Education',
-        },
-        {
-            categoryId: 4,
-            name: 'Clothing and Accessories',
-        },
-        {
-            categoryId: 5,
-            name: 'Household goods',
-        },
-        {
-            categoryId: 6,
-            name: 'Electronics',
-        },
-        {
-            categoryId: 7,
-            name: 'Toys and Games',
-        },
-        {
-            categoryId: 8,
-            name: 'Sports Equipment',
-        },
-        {
-            categoryId: 9,
-            name: 'Books and Media',
-        },
-        {
-            categoryId: 10,
-            name: 'Health and Beauty Products',
-        },
-        {
-            categoryId: 11,
-            name: 'Office supplies',
-        },
-        {
-            categoryId: 12,
-            name: 'Tools and Hardware',
-        },
-        {
-            categoryId: 13,
-            name: 'Art and Craft Supplies',
-        },
-    ];
 
     return (
         <SafeAreaView style={[globalStyle.background, globalStyle.flex]}>
@@ -96,6 +44,27 @@ const HomePage = () => {
                         resizeMode='contain'
                     />
                 </Pressable>
+
+                <View style={style.categoryHeader}>
+                    <Header title={'Select Category'} type={2} />
+                </View>
+                <View style={style.categories}>
+                    <FlatList
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        data={categories.categories}
+                        renderItem={({ item }) => (
+                            <View style={style.categoryItem} key={item.categoryId}>
+                                <Tab
+                                    tabId={item.categoryId}
+                                    onPress={value => dispatch(updateSelectedCategoryId(value))}
+                                    title={item.name}
+                                    isInactive={item.categoryId !== categories.selectedCategoryId}
+                                />
+                            </View>
+                        )}
+                    />
+                </View>
 
             </ScrollView>
 
